@@ -59,7 +59,11 @@ const Hero = () => {
                         <Link href={"/payment"}>
                             <button
                                 className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded cursor-pointer w-full'
-                                onClick={() => fbq('track', 'InitiateCheckout', { value: 299, currency: 'INR' })}
+                                onClick={() => {
+                                    if (window.fbq) {
+                                        window.fbq('track', 'Checkout', { value: 299, currency: 'INR' });
+                                    }
+                                }}
                             >
                                 Invest Now!
                             </button>
