@@ -1,8 +1,13 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import Link from "next/link";
 // import { FaCheckCircle } from "react-icons/fa"; 
 
 const ThankYouPage = () => {
+  useEffect(() => {
+    window.fbq('track', 'Purchase', { value: 299.99, currency: 'INR' });
+  }, []);
   return (
     <div className="flex justify-center items-center h-screen bg-gradient-to-br from-blue-600 to-blue-900 p-3">
       <div className="bg-white p-8 rounded-xl shadow-xl text-center max-w-md w-full">
