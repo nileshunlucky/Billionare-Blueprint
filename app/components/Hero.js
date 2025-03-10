@@ -13,6 +13,7 @@ import Image from "next/image";
 
 const Hero = () => {
     const [showTapEffect, setShowTapEffect] = useState(true);
+    
     return (
         <div className='flex md:flex-row flex-col justify-between items-center'>
             <div className="md:w-1/2 flex justify-center items-center relative">

@@ -5,23 +5,28 @@ import { ChevronLeft } from 'lucide-react';
 import Link from "next/link";
 import Image from "next/image";
 
-const loadRazorpay = () => {
-    return new Promise((resolve) => {
-        if (window.Razorpay) {
-            resolve(true);
-            return;
-        }
-        const script = document.createElement("script");
-        script.src = "https://checkout.razorpay.com/v1/checkout.js";
-        script.onload = () => resolve(true);
-        script.onerror = () => resolve(false);
-        document.body.appendChild(script);
-    });
-};
-
 const Page = () => {
     const [email, setEmail] = useState("");
     const [loading, setLoading] = useState(false);
+    const trackButtonClick = () => {
+        console.log("Button clicked - tracking event");
+        window.fbq('track', 'InitiateCheckout');
+    };
+
+
+    const loadRazorpay = () => {
+        return new Promise((resolve) => {
+            if (window.Razorpay) {
+                resolve(true);
+                return;
+            }
+            const script = document.createElement("script");
+            script.src = "https://checkout.razorpay.com/v1/checkout.js";
+            script.onload = () => resolve(true);
+            script.onerror = () => resolve(false);
+            document.body.appendChild(script);
+        });
+    };
 
     const handlePayment = async () => {
         if (!email) {
@@ -56,6 +61,11 @@ const Page = () => {
                 order_id: data.id,
                 handler: async function (response) {
                     alert("Payment Successful! eBook link sent to your email.");
+
+                    // Track successful purchase
+                    if (window.fbq) {
+                        window.fbq('track', 'Purchase', { value: 299, currency: 'INR' });
+                    }
 
                     // Send email with eBook link
                     await fetch("/api/send-email", {
@@ -110,7 +120,10 @@ const Page = () => {
                     required
                 />
                 <button
-                    onClick={handlePayment}
+                    onClick={() => {
+                        trackButtonClick();
+                        handlePayment();
+                    }}
                     className={`text-white w-full py-3 px-4 rounded-md font-medium ${loading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"
                         }`}
                     disabled={loading}
