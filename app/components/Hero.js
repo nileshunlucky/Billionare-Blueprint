@@ -37,7 +37,7 @@ const Hero = () => {
                         onClick={() => setShowTapEffect(false)}
                     >
                         <Image
-                            src="/Billionaire Blueprint ebook.png"
+                            src="/Billionaire Blueprint ebook.jpeg"
                             alt="Billionaire Blueprint"
                             width={500}
                             height={300}
