@@ -19,13 +19,13 @@ export async function POST(req) {
         });
 
         let mailOptions = {
-            from: `"Your Name" <${process.env.EMAIL_USER}>`,
+            from: `"Billionaire Blueprint" <${process.env.EMAIL_USER}>`,
             to: email,
-            subject: "Your eBook Download Link",
+            subject: "Your Billionaire Blueprint Download Link",
             html: `
                 <h3>Thank you for your purchase!</h3>
-                <p>Click below to download your eBook:</p>
-                <a href="https://drive.google.com/drive/folders/1xJEnpCo4lhQwWezI-VEKw35UxjWndwmP" target="_blank">Download eBook</a>
+                <p>Click below to download your MasterClass Course and eBook:</p>
+                <a href="https://drive.google.com/drive/folders/1xJEnpCo4lhQwWezI-VEKw35UxjWndwmP" target="_blank">Download</a>
             `,
         };
 

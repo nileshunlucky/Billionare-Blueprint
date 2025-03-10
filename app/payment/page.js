@@ -95,6 +95,14 @@ const Page = () => {
             <h1 className="text-2xl text-blue-600 font-semibold my-3">Order Summary</h1>
 
             <div className="border shadow-lg flex flex-col gap-4 rounded-xl p-4 bg-white md:w-[50%] w-full">
+                <div className="flex flex-col gap-2 items-center">
+                    <Image width={1000} height={1000} className="w-full object-contain rounded-md " src="/Iman Gadzhi - Influencer Ignited.jpeg" alt="Ai Copywriting" />
+                    <h1 className="ml-3 text-lg font-medium">Influencer Ignited Masterclass</h1>
+                </div>
+                <div className="flex flex-col gap-2 items-center">
+                    <Image width={1000} height={1000} className='w-full object-contain rounded-md' src="/Ai Copywritting.jpeg" alt="Ai Copywriting" />
+                    <h1 className="ml-3 text-lg font-medium">Ai Copywriting Masterclass</h1>
+                </div>
                 <div className="flex items-center">
                     <Image width={100} height={100} className="w-14 rounded-md" src="/Billionaire Blueprint ebook.png" alt="billionaire blueprint" />
                     <h1 className="ml-3 text-lg font-medium">Billionaire Blueprint eBook Bundle</h1>
