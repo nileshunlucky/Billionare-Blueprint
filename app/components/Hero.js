@@ -51,7 +51,7 @@ const Hero = () => {
                 <div className="flex flex-col gap-5">
                     <div className="flex flex-col gap-3">
                         <h1 className='text-xl font-medium whitespace-nowrap'>Billionaire Blueprint e-book bundle</h1>
-                        <p>Start your journey by reading this Top 10 Business & Finance  e-book's</p>
+                        <p>Start your journey by reading this Top 10 Business &amp; Finance e-book&apos;s</p>
                         <h1 className='text-xl font-boldwhitespace-nowrap'>₹299 Only</h1>
                     </div>
                     <div className="">
