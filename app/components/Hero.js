@@ -47,7 +47,7 @@ const Hero = () => {
                 <div className="flex flex-col gap-5">
                     <div className="flex flex-col gap-3">
                         <h1 className='text-xl font-medium whitespace-nowrap'>Billionaire Blueprint Bundle</h1>
-                        <p>Learn High Income skills and develop your mindset by thinking out of the box.</p>
+                        <p>Learn High Income skills and develop your Mindset by thinking out of the box.</p>
                         <h1 className='text-xl font-boldwhitespace-nowrap'>₹299 Only</h1>
                     </div>
                     <div className="">
