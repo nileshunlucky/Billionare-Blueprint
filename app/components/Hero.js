@@ -9,6 +9,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion"
+import Image from "next/image";
 
 const Hero = () => {
     const [showTapEffect, setShowTapEffect] = useState(true);
@@ -30,14 +31,20 @@ const Hero = () => {
 
                 {/* Clickable Image */}
                 <Link href="/ebooks">
-                    <motion.img
-                        src="/Billionaire Blueprint ebook.png"
-                        alt="billionaire blueprint"
-                        className="cursor-pointer rounded-lg"
+                    <motion.div
                         initial={{ scale: 1 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => setShowTapEffect(false)}
-                    />
+                    >
+                        <Image
+                            src="/Billionaire Blueprint ebook.png"
+                            alt="Billionaire Blueprint"
+                            width={500}
+                            height={300}
+                            className="cursor-pointer rounded-lg"
+                            priority
+                        />
+                    </motion.div>
                 </Link>
             </div>
             <div className="md:w-1/2 p-5">
@@ -48,7 +55,7 @@ const Hero = () => {
                         <h1 className='text-xl font-boldwhitespace-nowrap'>₹299 Only</h1>
                     </div>
                     <div className="">
-                       <Link href={"/payment"}><button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded cursor-pointer w-full'>Invest Now!</button></Link> 
+                        <Link href={"/payment"}><button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded cursor-pointer w-full'>Invest Now!</button></Link>
                     </div>
                     <hr className='my-5' />
                     <div className="">

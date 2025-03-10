@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const Card = () => {
     const ebooks = [
@@ -57,7 +58,7 @@ const Card = () => {
         <div className='grid md:grid-cols-5 grid-cols-2 justify-items-center'>
             {ebooks.map((ebook) => (
                 <div key={ebook.name}>
-                    <img className='w-40 md:w-100 h-70 md:h-100 object-contain' src={ebook.image} alt={ebook.name} />
+                    <Image width={1000} height={1000} className='w-40 md:w-100 h-70 md:h-100 object-contain' src={ebook.image} alt={ebook.name} />
                     <div className="p-1">
                         <h2>{ebook.name}</h2>
                         <p>{ebook.price}</p>

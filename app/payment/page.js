@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { ChevronLeft } from 'lucide-react';
 import Link from "next/link";
+import Image from "next/image";
 
 const loadRazorpay = () => {
     return new Promise((resolve) => {
@@ -85,7 +86,7 @@ const Page = () => {
 
             <div className="border shadow-lg flex flex-col gap-4 rounded-xl p-4 bg-white md:w-[50%] w-full">
                 <div className="flex items-center">
-                    <img className="w-14 rounded-md" src="/Billionaire Blueprint ebook.png" alt="billionaire blueprint" />
+                    <Image width={100} height={100} className="w-14 rounded-md" src="/Billionaire Blueprint ebook.png" alt="billionaire blueprint" />
                     <h1 className="ml-3 text-lg font-medium">Billionaire Blueprint eBook Bundle</h1>
                 </div>
                 <div className="flex items-center justify-between">
