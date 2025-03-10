@@ -13,7 +13,7 @@ import Image from "next/image";
 
 const Hero = () => {
     const [showTapEffect, setShowTapEffect] = useState(true);
-    
+
     return (
         <div className='flex md:flex-row flex-col justify-between items-center'>
             <div className="md:w-1/2 flex justify-center items-center relative">
@@ -56,7 +56,14 @@ const Hero = () => {
                         <h1 className='text-xl font-boldwhitespace-nowrap'>₹299 Only</h1>
                     </div>
                     <div className="">
-                        <Link href={"/payment"}><button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded cursor-pointer w-full'>Invest Now!</button></Link>
+                        <Link href={"/payment"}>
+                            <button
+                                className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded cursor-pointer w-full'
+                                onClick={() => fbq('track', 'InitiateCheckout', { value: 299, currency: 'INR' })}
+                            >
+                                Invest Now!
+                            </button>
+                        </Link>
                     </div>
                     <hr className='my-5' />
                     <div className="">
